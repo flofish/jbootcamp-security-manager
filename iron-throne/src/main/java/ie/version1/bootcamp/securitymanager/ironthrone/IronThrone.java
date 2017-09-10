@@ -18,6 +18,10 @@ public class IronThrone {
 	 * @param name
 	 */
 	public void claim(String name) {
+		SecurityManager securityManager = System.getSecurityManager();
+		if (securityManager != null) {
+			securityManager.checkPermission(new IronThronePermission(name));
+		}
 		Path ironThronePath = Paths.get(System.getProperty("user.home") + File.separator + ".ironThrone");
 		AccessController.doPrivileged((PrivilegedAction<Path>)() -> {
 			try {
