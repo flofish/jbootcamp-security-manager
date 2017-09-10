@@ -1,4 +1,10 @@
+keystore "mytrustore";
+
 grant {
 	permission java.util.PropertyPermission "user.home", "read";
-	permission java.io.FilePermission "${user.home}${/}.ironthrone", "read,write";
+	permission java.io.FilePermission "${user.home}${/}.ironthrone", "read";
+};
+
+grant SignedBy "georgerr" {
+    permission java.io.FilePermission "${user.home}${/}.ironthrone", "write";
 };
