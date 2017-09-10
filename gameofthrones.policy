@@ -7,4 +7,9 @@ grant {
 
 grant SignedBy "georgerr" {
     permission java.io.FilePermission "${user.home}${/}.ironthrone", "write";
+    permission ie.version1.bootcamp.securitymanager.ironthrone.IronThronePermission "*", signedBy "georgerr";
+};
+
+grant codeBase "file:./game-of-thrones/-" {
+    permission ie.version1.bootcamp.securitymanager.ironthrone.IronThronePermission "Jon", signedBy "georgerr";
 };
