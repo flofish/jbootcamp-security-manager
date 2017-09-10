@@ -1,0 +1,4 @@
+grant {
+	permission java.util.PropertyPermission "user.home", "read";
+	permission java.io.FilePermission "${user.home}${/}.ironthrone", "read,write";
+};
