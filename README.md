@@ -59,3 +59,9 @@ keytool -keystore signingkeys.jks -list -v
 ```
 jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore signingkeys.jks iron-throne\target\iron-throne-1.0.0-SNAPSHOT.jar georgerr
 ```
+
+# Verify jar
+
+```
+jarsigner -verify iron-throne\target\iron-throne-1.0.0-SNAPSHOT.jar
+```
